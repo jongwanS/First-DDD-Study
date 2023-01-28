@@ -185,7 +185,7 @@ public class JoinController{
 - 표현게층에서는 exception을 하나만 받아 처리할 수 있게된다.
 
 public class JoinService{
-  public void joinUsingValidator(JoinRequest joinRequest){
+  public void join(JoinRequest joinRequest){
     List<ValidationError> errors = new ArrayList<>();
     if(joinRequest.getId() == null)
       errors.add(ValidationError.of("아이디 없음","empty"));
