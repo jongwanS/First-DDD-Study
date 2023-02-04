@@ -118,7 +118,7 @@ public interface MemberRepository extends Repository<Member, MemberId>{
 트랜잭션 성공(v2)         ↓     
      ↓              트랜잭션 실패(v2가 이미존재하므로)
 ````
-- JPA는 @Version 어노테이션을 통해 버전을 사용한다.
+- JPA는 @Version 어노테이션을 통해 비선점 잠금을 구현한다.
   - 해당 버전을 통해 다른 쓰레드가 해당 애그리거트를 변경했는지 확인
   - `비선점 쿼리 실행시 수정된 행이 0개`이면, 다른 쓰레드에 의해 `애그리거트가 변경`되었다고 판단할수 있다. 
   - 어플리케이션에서는 `OptimisitcLockingFailureException`으로 트랜잭션 충돌 처리 할 수 있다.
