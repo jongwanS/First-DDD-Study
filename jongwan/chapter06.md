@@ -185,7 +185,7 @@ public class JoinController{
 - 표현게층에서는 exception을 하나만 받아 처리할 수 있게된다.
 
 public class JoinService{
-  public void joinUsingValidator(JoinRequest joinRequest){
+  public void join(JoinRequest joinRequest){
     List<ValidationError> errors = new ArrayList<>();
     if(joinRequest.getId() == null)
       errors.add(ValidationError.of("아이디 없음","empty"));
@@ -257,13 +257,16 @@ public class JoinController {
 ### 권한 검사
 - `권한 검사`는 표현영역,응용서비스, 도메인에서 수행될 수 있다.
 - `표현영역`
-  - 이러한 접근을 제어하기 좋은 위치는 `서블릿 필터`이다.
+  - 사용자 인증정보 생성/인증여부 검사(제어하기 좋은 위치는 `서블릿 필터`이다.)
+  - ex) 로그인유저만 특정 페이지에 접근
 - `응용 서비스`
   - 스프링 시큐리티에서 제공하는 권한검사 기능도 사용할 수 있다.
     - @PreAuthrize
+  - ex) 어드민 페이지 
 - `도메인`
   - 보안 프레임워크를 확장해서 개별 도메인 객체 수준의 권한 검사 기능도 넣을 수 있다.
     - 높은 프레임워크 이해도가 필요하다.
+  - ex) 자기자신이 작성한 게시글만 삭제할 수 있는 경우
 
 ### 조회 전용 기능과 응용 서비스
 - 서비스에서 수행하는 내용이 단순 조회 일때 `응용계층`이 아니라 `표현 영역`에서 바로 접근해도 괜찮다.
