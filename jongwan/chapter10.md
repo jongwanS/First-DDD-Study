@@ -64,7 +64,7 @@ public class CancelOrderService{
 - 4가지
   - 이벤트, 생성 주체, 디스패처, 핸들러
   
-![1](/images/ch10/event.png)
+![1](./images/ch10/event.png)
 
 - 이벤트 생성 주체
   - 엔티티/밸류/도메인서비스 에서 `상태가 바뀌면 이벤트를 발생`시킨다.(이벤트 발행)  
@@ -118,7 +118,7 @@ public class ShippingInfoChangedHandler{
   - 트리거 : 도메인 상태 변경시 후처리 실행
   - 다른 시스템간 동기화 : 이벤트를 통해 외부 시스템과 동기화 처리
   
-![1](/images/ch10/trigger.png)
+![1](./images/ch10/trigger.png)
 #### 4. 이벤트 장점
 - 도메인 로직이 섞이는 것을 방지 할 수 있다.
 - 이벤트를 사용하여 결제 도메인 의존을 제거
@@ -152,7 +152,7 @@ public class OrderCanceldEventHandler{
 }
 ````
 
-![1](/images/ch10/event2.png)
+![1](./images/ch10/event2.png)
 
 ### 3. 이벤트, 핸들러, 디스패처 구현
 - 이벤트 클래스 : 이벤트 표현
@@ -270,7 +270,7 @@ public class OrderCanceledEventHandler {
 응용 서비스 -> 도메인 기능실행 -> 도메인 -> rasie(event) -> Events 
 
 ````
-![1](/images/ch10/eventListner.png)
+![1](./images/ch10/eventListner.png)
 
 1. 도메인 기능을 실행
 2. Events.raise()를 통해 이벤트를 발생
