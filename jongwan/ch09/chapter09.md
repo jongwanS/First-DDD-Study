@@ -185,7 +185,7 @@ ProductRecommendationService(인터페이스)
 - 바운디드 컨텍스트는 다양한 방식으로 관계를 갖는다.
   - 보통 한쪽에서 API 제공, 다른 한쪽에서는 API를 호출(사용) 하는 관계이다.
 
-![1](/images/1.png)
+![1](./images/1.png)
 
 ````
 상류 컴포넌트 : 서비스 공급자 역할
